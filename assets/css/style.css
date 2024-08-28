@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "Amsterdam";
+  src: url("../fonts/Amsterdam.ttf") format("truetype");
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  color: #322f28;
+}
+
+.header {
+  display: flex;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 0 2em;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+
+.footer {
+  background-color: #dc924c;
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .title #doli {
+  color: #dc924c;
+  font-size: 1.8em;
+  font-family: "Amsterdam", sans-serif;
+}
+
+.header .title #day {
+  font-size: 1.2em;
+}
+
+.header .title {
+  color: #6e6657;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2em;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #6e6657;
+  font-weight: 600;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #6e6657;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.header-nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 1em;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.header-nav-mobile.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-nav-mobile a {
+  padding: 10px;
+  text-align: left;
+  color: #6e6657;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .header-nav-mobile {
+    align-items: center;
+  }
+  .header .title #doli {
+    font-size: 1.5em;
+  }
+  .header .title #day {
+    font-size: 1em;
+  }
+}
+
+.burger-menu.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.main-banner {
+  position: relative;
+  background-image: url("../img/image_lille.webp");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 25vh;
+  text-align: center;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.main-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.main-banner * {
+  position: relative;
+  z-index: 2;
+}
+
+.main-banner img {
+  filter: brightness(50%);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5em;
+}
+
+.form-group input {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #dc924c;
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b76e33;
+}
+
+#gallery {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
